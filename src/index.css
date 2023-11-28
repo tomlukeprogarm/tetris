@@ -1,14 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #6f6a6a;
+  background-color: #101036;
 
 }
 
+
+*{
+  font-family: 'Pixelify Sans', sans-serif;
+}
 
 body {
   margin: 0;
@@ -16,11 +19,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  
 }
 
 h1 {
   font-size: 4em;
   line-height: 1.1;
+  border: 9px solid white;
+  padding: 20px;
 }
 
 button {
@@ -29,11 +35,31 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: rgb(56, 117, 152);
   cursor: pointer;
   transition: border-color 0.25s;
   margin-right: 10px;
 }
 
+.red{
+  color:red;
+}
 
+.orange{
+  color: orange;
+}
+
+.yellow{
+  color: yellow;
+}
+
+.green{
+  color: green;
+}
+
+.blue{
+  color: blue;
+}
+
+.purple{
+  color: purple;
+}
