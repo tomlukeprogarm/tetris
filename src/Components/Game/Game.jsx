@@ -1,42 +1,53 @@
-import { useEffect } from "react";
-import GameBoard from "./GameBoard";
-import GameLo
-
-
+import React, { useEffect } from 'react';
+import useGameLogic from './GameLogic';
 
 const Controls = () => {
+  const { grid, currentPiece, nextPiece , movePiece, rotatePiece, hardDropPiece, clearLines, updateGameState } = useGameLogic();
+
   useEffect(() => {
     const handleKeyPress = (event) => {
       switch (event.code) {
-        case "ArrowLeft":
+        case 'ArrowLeft':
+          movePiece('left');
           break;
-        case "ArrowRight":
+
+        case 'ArrowRight':
+          movePiece('right');
           break;
-        case "ArrowUp":
+
+        case 'ArrowUp':
+          rotatePiece();
           break;
-        case "ArrowDown":
+
+        case 'ArrowDown':
+          hardDropPiece();
           break;
-        case "Space":
+
+        case 'Space':
+          hardDropPiece();
           break;
-        case "KeyP":
+
+        case 'KeyP':
+          pauseGame();
           break;
+          
         default:
           break;
       }
     };
 
-    document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener('keydown', handleKeyPress);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyPress);
+      document.removeEventListener('keydown', handleKeyPress);
     };
   }, []);
 
   return (
-   
-    <div>
-      <GameBoard />
-    </div>
+    <>
+      {/* <GameBoard grid={grid} /> */}
+      {/* Other game components */}
+    </>
   );
 };
 
